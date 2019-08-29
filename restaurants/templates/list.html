@@ -3,6 +3,14 @@
 {% block title %}List{% endblock title %}
 
 {% block content %}
+<form action="{% url 'restaurant-list' %}">
+  <div class="input-group mb-3">
+    <input type="test" class= "form-control" placeholder="Restuarant..." name='q' value="{{request.GET.q}}">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type"submit">search</button>
+    </div>
+  </div>
+</form>
 <br>
 <div class="row">
     {% for restaurant in restaurants %}
